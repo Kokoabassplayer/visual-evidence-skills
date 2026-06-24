@@ -1,0 +1,4 @@
+interface:
+  display_name: "Visual Evidence Annotations"
+  short_description: "Screenshot with clear callouts"
+  default_prompt: "Use $visual-evidence-annotations to capture the screen and mark the exact area I mean with a clear visual callout."

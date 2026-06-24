@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Reusable Codex skills for screenshot-based visual evidence and GitHub comments with annotated proof.">
+  <title>Visual Evidence Skills</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" aria-label="Primary">
+    <nav class="nav shell">
+      <a class="brand" href="#top" aria-label="Visual Evidence Skills home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Visual Evidence Skills</span>
+      </a>
+      <div class="nav-links" aria-label="Sections">
+        <a href="#skills">Skills</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#install">Install</a>
+        <a href="https://github.com/Kokoabassplayer/visual-evidence-skills">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" id="top">
+      <div class="hero-copy">
+        <h1>Visual Evidence Skills</h1>
+        <p class="lead">Capture the right source, mark the exact area, and share proof that business and technical reviewers can understand at a glance.</p>
+        <div class="hero-actions" aria-label="Primary actions">
+          <a class="button primary" href="https://github.com/Kokoabassplayer/visual-evidence-skills">View on GitHub</a>
+          <a class="button secondary" href="#install">Install skills</a>
+        </div>
+      </div>
+      <figure class="hero-media">
+        <img src="assets/evidence-preview.png" alt="Annotated browser screenshot with red and orange callouts around exact evidence areas." width="1600" height="1040">
+      </figure>
+    </section>
+
+    <section class="section intro-band" aria-labelledby="why-title">
+      <div class="shell split">
+        <div>
+          <h2 id="why-title">Show the point, not a paragraph.</h2>
+        </div>
+        <p>These skills turn review evidence into a small repeatable practice: use the same source as the reviewer, add a clear visual callout, verify the image, then hand off a concise comment or image.</p>
+      </div>
+    </section>
+
+    <section class="section shell" id="skills" aria-labelledby="skills-title">
+      <div class="section-heading">
+        <h2 id="skills-title">Two skills, one evidence flow</h2>
+        <p>Use the universal skill anywhere. Add the GitHub companion when the evidence needs to become an issue or PR comment.</p>
+      </div>
+      <div class="skill-grid">
+        <article class="skill-card">
+          <div class="skill-icon circle" aria-hidden="true"></div>
+          <h3>visual-evidence-annotations</h3>
+          <p>Capture a screen, page, document, dashboard, or supplied image and mark the exact area with a circle, box, arrow, pin, or short label.</p>
+          <code>Use $visual-evidence-annotations</code>
+        </article>
+        <article class="skill-card">
+          <div class="skill-icon comment" aria-hidden="true"></div>
+          <h3>github-visual-evidence-comments</h3>
+          <p>Prepare GitHub issue or PR comments with reachable annotated images, source URLs, concise validation notes, and reviewer-ready markdown.</p>
+          <code>Use $github-visual-evidence-comments</code>
+        </article>
+      </div>
+    </section>
+
+    <section class="section workflow-section" id="workflow" aria-labelledby="workflow-title">
+      <div class="shell">
+        <div class="section-heading compact">
+          <h2 id="workflow-title">How it works</h2>
+          <p>The workflow stays deliberately small so the evidence is trusted and easy to reuse.</p>
+        </div>
+        <ol class="steps">
+          <li><span>1</span><strong>Use the exact source</strong><p>Preview, production, staging, document, or supplied image. The screenshot should match what the stakeholder cares about.</p></li>
+          <li><span>2</span><strong>Mark the exact target</strong><p>Use one clear callout around the item being discussed. Keep the evidence readable.</p></li>
+          <li><span>3</span><strong>Verify the image</strong><p>Open the final screenshot and confirm the target, context, and text are all visible.</p></li>
+          <li><span>4</span><strong>Share a concise comment</strong><p>For GitHub, embed a reachable image and state what the marked area proves.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section shell install-section" id="install" aria-labelledby="install-title">
+      <div class="install-copy">
+        <h2 id="install-title">Install</h2>
+        <p>Copy one or both skill folders into your Codex skills directory, then reload your agent session.</p>
+      </div>
+      <div class="code-panel" role="region" aria-label="Install paths">
+        <pre><code>~/.codex/skills/visual-evidence-annotations
+~/.codex/skills/github-visual-evidence-comments</code></pre>
+      </div>
+      <div class="code-panel" role="region" aria-label="Example prompts">
+        <pre><code>Use $visual-evidence-annotations to mark the dashboard number that changed.
+Use $github-visual-evidence-comments to draft the PR comment with the annotated evidence.</code></pre>
+      </div>
+    </section>
+
+    <section class="section shell boundaries" aria-labelledby="boundaries-title">
+      <div>
+        <h2 id="boundaries-title">Clear boundaries</h2>
+        <p>The universal visual skill does not include GitHub, ticket, approval, or commit workflow steps. The GitHub companion adds only the evidence-comment workflow; it does not close issues, merge pull requests, change labels, or add resolving keywords unless explicitly requested.</p>
+      </div>
+      <a class="button primary" href="https://github.com/Kokoabassplayer/visual-evidence-skills/tree/main/visual-evidence-annotations">Read the skill</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <span>MIT licensed.</span>
+      <a href="https://github.com/Kokoabassplayer/visual-evidence-skills">GitHub repository</a>
+    </div>
+  </footer>
+</body>
+</html>
