@@ -13,6 +13,58 @@ The idea is simple: make business and technical review faster by showing the exa
 
 Project site: https://kokoabassplayer.github.io/visual-evidence-skills/
 
+## Sponsor This Work
+
+If this workflow helps your team review faster, you can support the project through GitHub Sponsors:
+
+https://github.com/sponsors/Kokoabassplayer
+
+Sponsorship helps fund better examples, automation scripts, GitHub comment templates, and future pro workflows for evidence-based reviews.
+
+## Visual Guide
+
+This is the kind of result the skills are meant to produce: one screenshot, clear context, and precise visual callouts around the evidence.
+
+![Annotated browser screenshot showing red and orange callouts around exact review evidence areas.](docs/assets/evidence-preview.png)
+
+### What The Result Should Look Like
+
+| Visual element | Use it for | Good result |
+| --- | --- | --- |
+| Circle | Small controls, numbers, icons, or short labels | The target is obvious without covering it. |
+| Box | Text blocks, table rows, cards, formulas, or wide UI regions | The reviewer can still read the marked content. |
+| Arrow or pin | Showing relationship, movement, or a hard-to-find target | The marker points to the exact evidence, not just the general area. |
+| Short label | When the mark alone is ambiguous | The label says what the screenshot proves in one sentence. |
+
+### How To Use The Skills Together
+
+1. Capture and mark the evidence:
+
+```text
+Use $visual-evidence-annotations to capture the preview page and mark the formula text that does not match the site typography.
+```
+
+2. Turn the marked screenshot into a GitHub-ready comment:
+
+```text
+Use $github-visual-evidence-comments to draft a GitHub issue comment using this annotated screenshot, the preview URL, and a short validation note.
+```
+
+3. Expected GitHub comment shape:
+
+```markdown
+Verified on the preview site.
+
+Source: <preview or production URL>
+Validation: <short validation summary>
+
+What to look at: the marked area shows <specific visible evidence>.
+
+![Annotated evidence](<reachable image URL>)
+
+Note: the red/orange markers are screenshot annotations for review evidence only; they are not part of the product UI.
+```
+
 ## Install
 
 Copy one or both skill folders into your Codex skills directory.
@@ -71,6 +123,9 @@ github-visual-evidence-comments/
   SKILL.md
   agents/
     openai.yaml
+
+.github/
+  FUNDING.yml
 
 docs/
   index.html

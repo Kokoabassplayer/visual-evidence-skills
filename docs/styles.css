@@ -114,6 +114,7 @@ a { color: inherit; }
 .button:focus-visible { outline: 3px solid rgba(29, 78, 216, 0.35); outline-offset: 2px; }
 .primary { background: var(--ink); color: #fff; box-shadow: 0 10px 24px rgba(23, 32, 51, 0.18); }
 .secondary { background: #ffffff; color: var(--ink); border-color: var(--line); }
+.sponsor { background: #fff7ed; color: #9a3412; border-color: #fed7aa; }
 .hero-copy, .hero-media { min-width: 0; }
 .hero-media {
   margin: 0;
@@ -242,6 +243,20 @@ a { color: inherit; }
 }
 .code-panel pre { margin: 0; padding: 22px; white-space: pre-wrap; }
 .code-panel code { color: #e5edf6; font-size: 15px; line-height: 1.7; }
+.sponsor-section { background: #fff7ed; }
+.sponsor-panel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #fed7aa;
+  border-radius: var(--radius);
+  padding: 34px;
+  box-shadow: 0 12px 34px rgba(154, 52, 18, 0.08);
+}
+.sponsor-panel h2 { margin: 0; font-size: clamp(30px, 4vw, 48px); line-height: 1.08; }
+.sponsor-panel p { color: var(--muted); font-size: 18px; margin: 14px 0 0; max-width: 780px; }
 .boundaries {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -256,7 +271,7 @@ a { color: inherit; }
 @media (max-width: 900px) {
   .nav { align-items: flex-start; flex-direction: column; padding: 16px 0; }
   .nav-links { flex-wrap: wrap; }
-  .hero, .split, .install-section, .boundaries { grid-template-columns: 1fr; }
+  .hero, .split, .install-section, .boundaries, .sponsor-panel { grid-template-columns: 1fr; }
   .hero { padding-top: 40px; gap: 34px; }
   .skill-grid, .steps { grid-template-columns: 1fr; }
   .install-copy { grid-row: auto; padding-right: 0; }
