@@ -19,7 +19,7 @@ If this workflow helps your team review faster, you can support the project thro
 
 https://github.com/sponsors/Kokoabassplayer
 
-Sponsorship helps fund better examples, automation scripts, GitHub comment templates, and future pro workflows for evidence-based reviews.
+Sponsorship is optional support for the open-source project. It helps fund better examples, documentation, automation scripts, and GitHub comment templates. It does not create a support SLA, custom-work guarantee, or paid-service obligation unless we separately agree on that.
 
 ## Visual Guide
 
