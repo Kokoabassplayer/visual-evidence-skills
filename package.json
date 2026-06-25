@@ -1,0 +1,34 @@
+{
+  "name": "@visual-evidence/install",
+  "version": "0.1.0",
+  "description": "Cross-harness Agent Skills and CLI helpers for screenshot-based visual evidence.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kokoabassplayer/visual-evidence-skills.git"
+  },
+  "homepage": "https://kokoabassplayer.github.io/visual-evidence-skills/",
+  "bin": {
+    "visual-evidence-install": "./packages/installer/bin/install.mjs"
+  },
+  "scripts": {
+    "test": "node --test packages/cli/test/*.test.mjs packages/installer/test/*.test.mjs",
+    "test:cli": "node --test packages/cli/test/*.test.mjs",
+    "test:installer": "node --test packages/installer/test/*.test.mjs",
+    "install:dry-run": "node packages/installer/bin/install.mjs --target all --dry-run --yes"
+  },
+  "files": [
+    "adapters/",
+    "github-visual-evidence-comments/",
+    "installers/",
+    "packages/",
+    "skills/",
+    "visual-evidence-annotations/",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  }
+}

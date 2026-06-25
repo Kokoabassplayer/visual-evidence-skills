@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub Visual Evidence Comments"
+  short_description: "Post GitHub comments with marked evidence"
+  default_prompt: "Use $github-visual-evidence-comments to prepare a GitHub issue or PR comment with annotated screenshot evidence."
