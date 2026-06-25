@@ -29,10 +29,10 @@ The product should remain portable across AI tools by using the Agent Skills for
 
 ### One-Command Install
 
-Primary install command:
+Primary install command from GitHub before npm publishing:
 
 ```bash
-npx @visual-evidence/install@latest
+npx github:Kokoabassplayer/visual-evidence-skills
 ```
 
 Fallback launchers:
@@ -195,13 +195,13 @@ Detection order:
 Useful flags:
 
 ```bash
-npx @visual-evidence/install@latest --target all
-npx @visual-evidence/install@latest --target claude-code
-npx @visual-evidence/install@latest --target codex
-npx @visual-evidence/install@latest --target openclaw
-npx @visual-evidence/install@latest --target gemini-cli
-npx @visual-evidence/install@latest --dry-run
-npx @visual-evidence/install@latest --yes
+npx github:Kokoabassplayer/visual-evidence-skills --target all
+npx github:Kokoabassplayer/visual-evidence-skills --target claude-code
+npx github:Kokoabassplayer/visual-evidence-skills --target codex
+npx github:Kokoabassplayer/visual-evidence-skills --target openclaw
+npx github:Kokoabassplayer/visual-evidence-skills --target gemini-cli
+npx github:Kokoabassplayer/visual-evidence-skills --dry-run
+npx github:Kokoabassplayer/visual-evidence-skills --yes
 ```
 
 Expected success output:
@@ -274,7 +274,6 @@ CLI tests:
 
 - Whether the repo should be renamed from `visual-evidence-skills` to `visual-evidence`.
 - Whether npm package scope should be personal, such as `@kokoabassplayer/visual-evidence`, or project-branded, such as `@visual-evidence/install`.
-- Whether the installer should install all detected harnesses by default or ask when more than one is found.
 - Whether screenshot capture should use Playwright bundled by the CLI or rely first on harness-native browser tools.
 
 ## References

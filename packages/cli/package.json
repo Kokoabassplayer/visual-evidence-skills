@@ -1,0 +1,13 @@
+{
+  "name": "@visual-evidence/cli",
+  "version": "0.1.0",
+  "description": "CLI helpers for Visual Evidence annotation and GitHub comment markdown.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "visual-evidence": "./bin/visual-evidence.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

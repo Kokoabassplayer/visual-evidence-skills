@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Reusable Codex skills for screenshot-based visual evidence and GitHub comments with annotated proof.">
+  <meta name="description" content="Cross-harness Agent Skills and CLI helpers for screenshot-based visual evidence and GitHub comments with annotated proof.">
   <title>Visual Evidence Skills</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
@@ -30,10 +30,10 @@
     <section class="hero shell" id="top">
       <div class="hero-copy">
         <h1>Visual Evidence Skills</h1>
-        <p class="lead">Capture the right source, mark the exact area, and share proof that business and technical reviewers can understand at a glance.</p>
+        <p class="lead">Install once, capture the right source, mark the exact area, and share proof that business and technical reviewers can understand at a glance.</p>
         <div class="hero-actions" aria-label="Primary actions">
           <a class="button primary" href="https://github.com/Kokoabassplayer/visual-evidence-skills">View on GitHub</a>
-          <a class="button secondary" href="#install">Install skills</a>
+          <a class="button secondary" href="#install">One-command install</a>
           <a class="button sponsor" href="https://github.com/sponsors/Kokoabassplayer">Sponsor</a>
         </div>
       </div>
@@ -53,8 +53,8 @@
 
     <section class="section shell" id="skills" aria-labelledby="skills-title">
       <div class="section-heading">
-        <h2 id="skills-title">Two skills, one evidence flow</h2>
-        <p>Use the universal skill anywhere. Add the GitHub companion when the evidence needs to become an issue or PR comment.</p>
+        <h2 id="skills-title">Portable skills, one evidence flow</h2>
+        <p>Use the Agent Skills core across Claude Code, Codex, OpenClaw, Gemini CLI, or generic skills-compatible harnesses. Add the GitHub companion when evidence needs to become an issue or PR comment.</p>
       </div>
       <div class="skill-grid">
         <article class="skill-card">
@@ -90,14 +90,13 @@
     <section class="section shell install-section" id="install" aria-labelledby="install-title">
       <div class="install-copy">
         <h2 id="install-title">Install</h2>
-        <p>Copy one or both skill folders into your Codex skills directory, then reload your agent session.</p>
+        <p>Run one command to install the portable skills and the best adapter for each detected AI harness.</p>
       </div>
       <div class="code-panel" role="region" aria-label="Install paths">
-        <pre><code>~/.codex/skills/visual-evidence-annotations
-~/.codex/skills/github-visual-evidence-comments</code></pre>
+        <pre><code>npx github:Kokoabassplayer/visual-evidence-skills</code></pre>
       </div>
       <div class="code-panel" role="region" aria-label="Example prompts">
-        <pre><code>Use $visual-evidence-annotations to mark the dashboard number that changed.
+        <pre><code>Use visual-evidence to capture this page and circle the wrong number.
 Use $github-visual-evidence-comments to draft the PR comment with the annotated evidence.</code></pre>
       </div>
     </section>
