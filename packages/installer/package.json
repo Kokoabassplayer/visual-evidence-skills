@@ -1,6 +1,6 @@
 {
   "name": "@visual-evidence/install",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "One-command installer for Visual Evidence skills and adapters.",
   "type": "module",
   "license": "MIT",
