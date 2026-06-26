@@ -26,7 +26,7 @@ Supported targets:
 
 | Target | Install behavior |
 | --- | --- |
-| Claude Code | Installs a `visual-evidence` plugin under `~/.claude/skills/visual-evidence`. |
+| Claude Code | Installs standalone user skills under `~/.claude/skills` (`visual-evidence-annotations`, `github-visual-evidence-comments`). |
 | Codex | Installs Agent Skills under `~/.codex/skills`. |
 | OpenClaw | Installs Agent Skills under `~/.openclaw/skills`. |
 | Gemini CLI | Installs skills plus a Gemini context file under `~/.gemini/visual-evidence`. |
