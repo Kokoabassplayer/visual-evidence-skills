@@ -43,7 +43,7 @@ export function normalizeTargets(targets) {
 }
 
 function destinationFor(target, home) {
-  if (target === 'claude-code') return path.join(home, '.claude', 'skills', 'visual-evidence');
+  if (target === 'claude-code') return path.join(home, '.claude', 'skills');
   if (target === 'codex') return path.join(home, '.codex', 'skills');
   if (target === 'openclaw') return path.join(home, '.openclaw', 'skills');
   if (target === 'gemini-cli') return path.join(home, '.gemini', 'visual-evidence');
@@ -51,7 +51,7 @@ function destinationFor(target, home) {
 }
 
 function destinationUnder(dest, target) {
-  if (target === 'claude-code') return path.join(dest, 'claude-code', 'visual-evidence');
+  if (target === 'claude-code') return path.join(dest, 'claude-code', 'skills');
   if (target === 'gemini-cli') return path.join(dest, 'gemini-cli', 'visual-evidence');
   if (target === 'generic') return path.join(dest, 'skills');
   return path.join(dest, target, 'skills');
@@ -60,7 +60,6 @@ function destinationUnder(dest, target) {
 function actionsForTarget({ target, root }) {
   const skillRoot = skillRootForTarget(target, root);
   const actions = SKILL_NAMES.map((skill) => ({ type: 'copy-skill', target, skill, to: path.join(skillRoot, skill) }));
-  if (target === 'claude-code') actions.unshift({ type: 'write-manifest', target, to: path.join(root, '.claude-plugin', 'plugin.json') });
   if (target === 'gemini-cli') actions.push({ type: 'write-context', target, to: path.join(root, 'GEMINI.md') });
   return actions;
 }
@@ -71,16 +70,12 @@ async function installTarget({ target, root, repoRoot }) {
   for (const skill of SKILL_NAMES) {
     await copySkill({ repoRoot, skill, destination: path.join(skillRoot, skill) });
   }
-  if (target === 'claude-code') {
-    await writeClaudeManifest(root);
-  }
   if (target === 'gemini-cli') {
     await writeGeminiContext(root);
   }
 }
 
 function skillRootForTarget(target, root) {
-  if (target === 'claude-code') return path.join(root, 'skills');
   if (target === 'gemini-cli') return path.join(root, 'skills');
   return root;
 }
@@ -102,21 +97,6 @@ async function resolveSkillSource(repoRoot, skill) {
     }
   }
   throw new Error(`Cannot find skill source for ${skill}.`);
-}
-
-async function writeClaudeManifest(root) {
-  const manifest = {
-    name: 'visual-evidence',
-    description: 'Capture, annotate, and share screenshot-based visual evidence.',
-    version: '0.1.0',
-    author: { name: 'Kokoabassplayer' },
-    homepage: 'https://kokoabassplayer.github.io/visual-evidence-skills/',
-    repository: 'https://github.com/Kokoabassplayer/visual-evidence-skills',
-    license: 'MIT',
-  };
-  const dir = path.join(root, '.claude-plugin');
-  await mkdir(dir, { recursive: true });
-  await writeFile(path.join(dir, 'plugin.json'), `${JSON.stringify(manifest, null, 2)}\n`);
 }
 
 async function writeGeminiContext(root) {

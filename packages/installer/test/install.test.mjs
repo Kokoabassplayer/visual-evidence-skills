@@ -64,10 +64,37 @@ describe('visual-evidence installer', () => {
     });
 
     assert.equal(plan.length, 5);
-    assert.equal(plan.find((item) => item.target === 'claude-code').root.endsWith(path.join('.claude', 'skills', 'visual-evidence')), true);
+    assert.equal(plan.find((item) => item.target === 'claude-code').root.endsWith(path.join('.claude', 'skills')), true);
     assert.equal(plan.find((item) => item.target === 'codex').root.endsWith(path.join('.codex', 'skills')), true);
     assert.equal(plan.find((item) => item.target === 'openclaw').root.endsWith(path.join('.openclaw', 'skills')), true);
     assert.equal(plan.find((item) => item.target === 'gemini-cli').root.endsWith(path.join('.gemini', 'visual-evidence')), true);
     assert.equal(plan.find((item) => item.target === 'generic').root.endsWith(path.join('.agents', 'skills')), true);
+  });
+
+  it('installs claude-code skills one level under the skills dir with no plugin container or manifest', async () => {
+    const dest = await mkdtemp(path.join(tmpdir(), 've-claude-'));
+
+    const result = await installVisualEvidence({
+      repoRoot,
+      targets: ['claude-code'],
+      dest,
+      yes: true,
+    });
+
+    assert.deepEqual(result.targets, ['claude-code']);
+
+    // Claude Code discovers user skills at <skills-dir>/<name>/SKILL.md (one level).
+    // The installer must produce exactly that shape for each skill.
+    for (const skill of ['visual-evidence-annotations', 'github-visual-evidence-comments']) {
+      const skillFile = path.join(dest, 'claude-code', 'skills', skill, 'SKILL.md');
+      assert.equal(await exists(skillFile), true, `${skill} must be installed one level under skills/`);
+    }
+
+    // The old layout nested skills under a `visual-evidence` container, which Claude Code cannot discover.
+    assert.equal(await exists(path.join(dest, 'claude-code', 'visual-evidence')), false, 'must not nest skills under a visual-evidence container');
+
+    // Standalone skills, not a plugin: no manifest should be planned or written.
+    assert.equal(result.actions.some((action) => action.type === 'write-manifest' && action.target === 'claude-code'), false, 'must not plan a plugin manifest');
+    assert.equal(await exists(path.join(dest, 'claude-code', 'skills', '.claude-plugin', 'plugin.json')), false, 'must not write a plugin.json');
   });
 });
