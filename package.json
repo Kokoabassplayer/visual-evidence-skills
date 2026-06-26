@@ -1,6 +1,6 @@
 {
   "name": "@visual-evidence/install",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Cross-harness Agent Skills and CLI helpers for screenshot-based visual evidence.",
   "type": "module",
   "license": "MIT",

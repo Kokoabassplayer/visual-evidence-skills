@@ -6,6 +6,10 @@ Visual Evidence helps AI agents capture the right source, mark the exact area wi
 
 Project site: https://kokoabassplayer.github.io/visual-evidence-skills/
 
+## Demo
+
+![Visual Evidence demo](docs/assets/visual-evidence-demo.gif)
+
 ## Install
 
 Recommended one-command install from GitHub today:
